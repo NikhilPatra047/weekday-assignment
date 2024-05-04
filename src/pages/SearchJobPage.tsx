@@ -16,7 +16,6 @@ export default function SearchJobPage() {
           const limit: number = Number(import.meta.env.VITE_LIMIT)
           return limit + prevPageNumber
         })
-        console.log('visible')
       }
     })
     if (observer.current) observer.current?.disconnect()

@@ -1,10 +1,10 @@
-async function fetchJobs() {
+async function fetchJobs(offset: number) {
   const headers = new Headers() 
   headers.append('Content-Type', 'application/json')
 
   const body = JSON.stringify({
-    'limit': 10, 
-    'offset': 0
+    'limit': 9, 
+    'offset': offset
   })
 
   const requestOptions = {
@@ -18,7 +18,6 @@ async function fetchJobs() {
     const jobResponse = response.json()
     return jobResponse
   } catch(error) {
-    console.log(error)
     return error
   }
 }
