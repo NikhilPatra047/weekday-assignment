@@ -6,8 +6,6 @@ const initialState: FILTER = {
   roles: [], 
   location: [], 
   experience: null, 
-  remote: [], 
-  techStack: [], 
   minBasePay: null,
   search: ''
 }
@@ -36,18 +34,6 @@ export const AddFilterSlice = createSlice({
         experience: action.payload.experience
       } 
     },
-    setRemote: (state, action) => {
-      return {
-        ...state, 
-        remote: action.payload.remote 
-      }
-    }, 
-    setTechStack: (state, action) => {
-      return {
-        ...state, 
-        techStack: action.payload.techStack 
-      }
-    },
     setMinBasePay: (state, action) => {
       return {
         ...state, 
@@ -63,5 +49,5 @@ export const AddFilterSlice = createSlice({
   }
 })
 
-export const { setRoles, setLocation, setExperience, setRemote, setTechStack, setMinBasePay, setSearch } = AddFilterSlice.actions
+export const { setRoles, setLocation, setExperience, setMinBasePay, setSearch } = AddFilterSlice.actions
 export default AddFilterSlice.reducer
