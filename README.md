@@ -29,6 +29,25 @@
 - Made the application responsive for smaller screens including mobile screens. 
 - "View More Modal" for viewing full job descriptions upon clicking the "View More" button
 
+# Project Structure 
+- data
+  - contains all the mock data for filters and constants
+- src
+  - api 
+    - contains API call to the fetch jobs API 
+  - components
+    - contains implements of all common UI elements used in the project 
+  - hooks 
+    - contains all custom hooks used in the porject
+  - pages 
+    - contains the main parent home page in which all the components are imported and used along with the custom hooks 
+  - redux
+    - contains redux store and slices 
+  - types 
+    - contains the Typescript type implementation details
+- assets  
+  - contains images (default images. No further images have been used in the completion of the project.)
+
 # Default ReadMe Configuration by Vite (Optional for you to go through)
 
 ## React + TypeScript + Vite

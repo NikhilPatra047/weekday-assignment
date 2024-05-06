@@ -8,7 +8,11 @@ export default function useFilterJobs(response: JOB_RESULT[]) {
   const { location, experience, minBasePay, search, roles } = useSelector((state: RootState) => state.filter)
 
   const filterLocation = () => {
-    const newResponse = response.filter((resp: JOB_RESULT) => location.includes(resp.location!.toLowerCase()))
+    const newResponse = response.filter((resp: JOB_RESULT) => {
+      if (resp.location) {
+        return location.includes(resp.location.toLowerCase())
+      }
+    })
     setFilteredResponse((prevResponse: JOB_RESULT[]) => {
       const uniqueResponses = Array.from(new Set([...prevResponse, ...newResponse]))
       return [...uniqueResponses]
