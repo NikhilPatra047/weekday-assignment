@@ -10,7 +10,8 @@ export default function useFilterJobs(response: JOB_RESULT[]) {
   const filterLocation = () => {
     const newResponse = response.filter((resp: JOB_RESULT) => location.includes(resp.location!.toLowerCase()))
     setFilteredResponse((prevResponse: JOB_RESULT[]) => {
-      return [...prevResponse, ...newResponse]
+      const uniqueResponses = Array.from(new Set([...prevResponse, ...newResponse]))
+      return [...uniqueResponses]
     })
   }
 
@@ -21,7 +22,8 @@ export default function useFilterJobs(response: JOB_RESULT[]) {
       }
     })
     setFilteredResponse((prevResponse: JOB_RESULT[]) => {
-      return [...prevResponse, ...newResponse]
+      const uniqueResponses = Array.from(new Set([...prevResponse, ...newResponse]))
+      return [...uniqueResponses]
     })
   }
 
@@ -32,7 +34,8 @@ export default function useFilterJobs(response: JOB_RESULT[]) {
       } 
     })
     setFilteredResponse((prevResponse: JOB_RESULT[]) => {
-      return [...prevResponse, ...newResponse]
+      const uniqueResponses = Array.from(new Set([...prevResponse, ...newResponse]))
+      return [...uniqueResponses]
     })
   }
 
@@ -46,7 +49,8 @@ export default function useFilterJobs(response: JOB_RESULT[]) {
       }
     })
     setFilteredResponse((prevResponse: JOB_RESULT[]) => {
-      return [...prevResponse, ...newResponse]
+      const uniqueResponses = Array.from(new Set([...prevResponse, ...newResponse]))
+      return [...uniqueResponses]
     })
   }
 
@@ -57,7 +61,8 @@ export default function useFilterJobs(response: JOB_RESULT[]) {
       }
     })
     setFilteredResponse((prevResponse: JOB_RESULT[]) => {
-      return [...prevResponse, ...newResponse]
+      const uniqueResponses = Array.from(new Set([...prevResponse, ...newResponse]))
+      return [...uniqueResponses]
     })
   }
 
