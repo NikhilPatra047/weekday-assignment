@@ -1,9 +1,9 @@
 import { Autocomplete, AutocompleteRenderGroupParams, AutocompleteRenderInputParams, TextField, styled } from "@mui/material";
 import { useState } from "react";
-import { LOCATION, OFFICE } from "../../../data";
+import { LOCATION } from "../../../data";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
-import { setLocation, setRemote, setTechStack } from "../../redux/slices/AddFilterSlice";
+import { setLocation } from "../../redux/slices/AddFilterSlice";
 
 const GroupItems = styled('ul')`
   padding: 0;
@@ -23,13 +23,8 @@ export default function MultiFilter({ menu, label, type }: { menu: string[], lab
       onChange={(event: any, newValue: string[]) => {
         const new_value = newValue.map((v: string) => v)
         setValue(new_value)
-
         if (type === LOCATION) {
           dispatch(setLocation({ location: new_value}))
-        } else if (type === OFFICE) {
-          dispatch(setRemote({ remote: new_value }))
-        } else {
-          dispatch(setTechStack({ techStack: new_value }))
         }
       }}
       options={menu}
