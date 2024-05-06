@@ -6,4 +6,7 @@ export type JOB_CARD = {
   jobDescription: string, 
   expRequired: number | null,
   logo: string,
+  link: string,
+  minPay: number | null, 
+  maxPay: number | null,
 }
