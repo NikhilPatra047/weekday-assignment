@@ -1,8 +1,12 @@
 import { Autocomplete, AutocompleteRenderGroupParams, AutocompleteRenderInputParams, TextField, styled } from "@mui/material";
 import { Roles } from "../../types/Roles";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import { setRoles } from "../../redux/slices/AddFilterSlice";
 
 const GroupHeader = styled('div')`
-  padding: .2em .5em .2em .5em;
+  padding: 1em .5em;
   color: gray;
 `;
 
@@ -11,6 +15,9 @@ const GroupItems = styled('ul')`
 `;
 
 export default function MultiFilterGrouped({ menu, label }: { menu: Roles[], label: string }) {
+  const dispatch = useDispatch<AppDispatch>()
+  const [value, setValue] = useState<Roles[]>([])
+  console.log('value', value)
   return (
     <Autocomplete
       id='multi-filter-grouped'
@@ -19,8 +26,13 @@ export default function MultiFilterGrouped({ menu, label }: { menu: Roles[], lab
       size='small'
       limitTags={2}
       options={menu}
-      groupBy={(menu) => menu.type}
-      getOptionLabel={(menu) => menu.title}
+      value={value}
+      onChange={(event: any, newValue: Roles[]) => {
+        setValue(newValue)
+        dispatch(setRoles({ roles: newValue }))
+      }}
+      groupBy={(option) => option.type}
+      getOptionLabel={(option) => option.title}
       renderInput={(params: AutocompleteRenderInputParams) => <TextField {...params} label={label} />}
       renderGroup={(params: AutocompleteRenderGroupParams) => (
         <li key={params.key}>
