@@ -47,7 +47,7 @@ function JobCard(jobInfo: JOB_CARD) {
   return (
     <>
     {
-      viewMore && <ViewModal open={viewMore} handleClose={handleClose} jobDescription={jobInfo.jobDescription} />
+      viewMore && <ViewModal open={viewMore} handleClose={handleClose} companyName={jobInfo.companyName} jobDescription={jobInfo.jobDescription} />
     }
     <StyledCard>
       <CardContent style={cardHeader}>
