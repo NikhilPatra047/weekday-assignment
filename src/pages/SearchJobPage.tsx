@@ -8,14 +8,14 @@ import { RootState } from "../redux/store.js"
 
 export default function SearchJobPage() {
   const state = useSelector((state: RootState) => state.filter)
-  const { loading, error, pageNumber } = useSelector((state: RootState) => state.apiData)
+  const { response, loading, error, pageNumber } = useSelector((state: RootState) => state.apiData)
 
-  const { response } = useGetJobs(pageNumber)
+  useGetJobs(pageNumber)  
   const { lastJobCard } = useInfiniteScrolling()
   const { filteredResponse } = useFilterJobs(response)
 
   return (
-    <section>
+    <section style={{ padding: '1em 0 1em 0'}}>
       <div className='filters'>
           <MultiFilterGrouped menu={roles} label={'Roles'} />
           <MultiFilter type={LOCATION} menu={location} label={'Location'} />
