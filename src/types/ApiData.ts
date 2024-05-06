@@ -5,4 +5,5 @@ export interface API_DATA {
   loading: boolean, 
   error: boolean, 
   pageNumber: number,
+  response: JOB_RESULT[]
 }

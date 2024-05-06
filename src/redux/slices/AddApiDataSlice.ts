@@ -6,6 +6,7 @@ const initialState: API_DATA = {
   loading: false, 
   error: false,
   pageNumber: 0,
+  response: []
 }
 
 export const AddApiDataSlice = createSlice({
@@ -21,6 +22,7 @@ export const AddApiDataSlice = createSlice({
       state.hasMore = action.payload.hasMore 
       state.loading = false 
       state.error = false 
+      state.response = [...state.response, ...action.payload.response]
     },
     failure: (state) => {
       state.hasMore = false 
