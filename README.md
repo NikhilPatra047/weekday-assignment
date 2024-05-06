@@ -1,4 +1,37 @@
-# React + TypeScript + Vite
+# How to spin up the Project 
+
+- Simply create a clone of the project in your local computer.
+- Open the project in your favourite code editor. 
+- do `npm install` to install all the dependencies (Make sure you have npm installed in your local computer).
+- Once done, hit `npm run dev` in your code editor terminal, and voila!
+
+
+# What did I use for this project? 
+
+- Vite (for faster setup of the React app along with Typescript)
+- ReactJS 
+- Typescript 
+- Redux
+- Material UI
+- Vanilla CSS 
+
+# What did I manage to accomplish in the duration of 2 days? (Implementation details)
+
+- Filters - (Roles, Experience, Location, Minimum Base Pay, Search by company)
+  - Removed the "Remote/On-site" and "Tech Stack" filters as the API response had no key with those specific values for me to filter the jobs on the frontend. 
+
+- Implemented the UI as closely as the original design. 
+  - However, for the filter dropdowns instead of creating custom dropdown designs, I used the ones provided by MUI. 
+
+- Infinite scroll 
+  - However, one has to clear the filters, if they have selected any, in order to browse more jobs. 
+
+- Made the application responsive for smaller screens including mobile screens. 
+- "View More Modal" for viewing full job descriptions upon clicking the "View More" button
+
+# Default ReadMe Configuration by Vite (Optional for you to go through)
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -28,34 +61,3 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
-# How to spin up the Project 
-
-- Simply create a clone of the project in your local computer.
-- Open the project in your favourite code editor. 
-- do `npm install` to install all the dependencies (Make sure you have npm installed in your local computer).
-- Once done, hit "npm run dev" in your code editor terminal, and voila!
-
-
-# What did I use for this project? 
-
-- Vite (for faster setup of the React app along with Typescript)
-- ReactJS 
-- Typescript 
-- Redux
-- Material UI
-- Vanilla CSS 
-
-# What did I manage to accomplish in the duration of 2 days? (Implementation details)
-
-- Filters - (Roles, Experience, Location, Minimum Base Pay, Search by company)
-  - Removed the "Remote/On-site" and "Tech Stack" filters as the API response had no key with those specific values for me to filter the jobs on the frontend. 
-
-- Implemented the UI as closely as the original design. 
-  - However, for the filter dropdowns instead of creating custom dropdown designs, I used the ones provided by MUI. 
-
-- Infinite scroll 
-  - However, one has to clear the filters, if they have selected any, in order to browse more jobs. 
-
-- Made the application responsive for smaller screens including mobile screens. 
-- "View More Modal" for viewing full job descriptions upon clicking the "View More" button
