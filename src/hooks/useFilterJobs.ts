@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { JOB_RESULT } from "../types/JobResult";
 
 export default function useFilterJobs(response: JOB_RESULT[]) {
